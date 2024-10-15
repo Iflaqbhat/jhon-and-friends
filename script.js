@@ -7,21 +7,48 @@ let arr = [
 ];
 
 function PrintDeveloperbyMap() {
-  //Write your code here , just console.log
+  // Print all employees with the profession of developer using map
+  arr.map((item) => {
+    if (item.profession === "developer") {
+      console.log(item.name);
+    }
+  });
 }
 
 function PrintDeveloperbyForEach() {
-  //Write your code here , just console.log
+  // Print all employees with the profession of developer using forEach
+  arr.forEach((item) => {
+    if (item.profession === "developer") {
+      console.log(item.name);
+    }
+  });
 }
 
 function addData() {
-  //Write your code here, just console.log
+  // Create another employee object and append it to the existing array
+  let newPerson = { id: 4, name: "Susan", age: "20", profession: "intern" };
+  // Check if an object with the same id already exists
+  if (!arr.some((person) => person.id === newPerson.id)) {
+    arr.push(newPerson);
+    console.log(arr);
+  } else {
+    console.log("Person with this ID already exists");
+  }
 }
 
 function removeAdmin() {
-  //Write your code here, just console.log
+  // Remove the object where the profession is admin
+  arr = arr.filter((item) => item.profession !== "admin");
+  console.log(arr);
 }
 
 function concatenateArray() {
-  //Write your code here, just console.log
+  // Create another array with 3 objects and concatenate
+  let arr2 = [
+    { id: 7, name: "Frank", age: "40", profession: "engineer" },
+    { id: 8, name: "Grace", age: "22", profession: "analyst" },
+    { id: 9, name: "Henry", age: "27", profession: "scientist" },
+  ];
+  let com = arr.concat(arr2);
+  console.log(com);
 }
